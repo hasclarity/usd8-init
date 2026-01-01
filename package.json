@@ -1,0 +1,26 @@
+{
+  "name": "usd8-stablecoin",
+  "version": "1.0.0",
+  "description": "USD8 Stablecoin backed by corporate bonds from 8 major companies",
+  "private": true,
+  "workspaces": [
+    "mobile-app",
+    "landing-page",
+    "shared"
+  ],
+  "scripts": {
+    "mobile": "cd mobile-app && npm start",
+    "landing": "cd landing-page && npm run dev",
+    "build:landing": "cd landing-page && npm run build",
+    "start:landing": "cd landing-page && npm start"
+  },
+  "keywords": [
+    "stablecoin",
+    "defi",
+    "web3",
+    "react-native",
+    "nextjs"
+  ],
+  "author": "",
+  "license": "MIT"
+}

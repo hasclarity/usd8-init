@@ -1,0 +1,11 @@
+{
+  "name": "usd8-shared",
+  "version": "1.0.0",
+  "description": "Shared utilities for USD8 stablecoin app",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {},
+  "dependencies": {
+    "viem": "^2.21.54"
+  }
+}
