@@ -42,13 +42,13 @@ export function RewardsTicker() {
       const now = Date.now();
       const timePassed = (now - lastUpdate) / 1000; // seconds
       
-      // Assuming 10.39% APY, calculate rewards per second
+      // Calculate rewards per second based on staked amount and APY
+      // Note: This uses a hardcoded APY of 10.39%. Consider making this dynamic
+      // by fetching from token data or making it configurable.
       // rewards_per_second = (staked_amount * apy) / (365 * 24 * 60 * 60)
-      // For simplicity, we'll increment by a small amount
-      // This is approximate and for UI purposes
       if (stakeInfo) {
         const stakedAmount = parseFloat(formatUnits((stakeInfo as any)[0] as bigint, 6));
-        const apyRate = 0.1039; // 10.39%
+        const apyRate = 0.1039; // 10.39% - TODO: Make this dynamic
         const rewardsPerSecond = (stakedAmount * apyRate) / (365 * 24 * 60 * 60);
         
         setDisplayRewards(prev => prev + rewardsPerSecond);

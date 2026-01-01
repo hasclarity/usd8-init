@@ -52,6 +52,11 @@ export function formatTokenAmount(value: bigint, decimals = 6): string {
   const fractionalStr = fractionalPart.toString().padStart(decimals, '0');
   const trimmed = fractionalStr.replace(/0+$/, '');
   
+  // Handle case where all fractional digits were zeros
+  if (trimmed === '') {
+    return wholePart.toString();
+  }
+  
   return `${wholePart}.${trimmed}`;
 }
 

@@ -63,7 +63,7 @@ export function StakingInterface() {
 
   const handleApprove = async (token: `0x${string}`, spender: `0x${string}`) => {
     const amountWei = parseUnits(amount || '0', 6);
-    writeContract({
+    return writeContract({
       address: token,
       abi: ERC20_ABI,
       functionName: 'approve',
@@ -80,7 +80,9 @@ export function StakingInterface() {
     // Check allowance
     const allowance = usdcAllowance as bigint | undefined;
     if (!allowance || allowance < amountWei) {
+      // Approval needed - the transaction will be handled by wagmi hooks
       await handleApprove(CONTRACTS.USDC, CONTRACTS.SUPPLY_POOL);
+      // Note: User will need to click deposit again after approval completes
       return;
     }
 
@@ -102,7 +104,9 @@ export function StakingInterface() {
     // Check allowance
     const allowance = sharesAllowance as bigint | undefined;
     if (!allowance || allowance < amountWei) {
+      // Approval needed - the transaction will be handled by wagmi hooks
       await handleApprove(CONTRACTS.YEARN_VAULT, CONTRACTS.STAKE_CONTRACT);
+      // Note: User will need to click stake again after approval completes
       return;
     }
 

@@ -15,6 +15,9 @@ import type { TokenData } from '../lib/types';
 import { CORPORATE_BONDS } from '../lib/config/contracts';
 import { formatCurrency, formatPercentage } from '../lib/utils';
 
+// TODO: Move this to an environment variable or config file
+const DAPP_URL = 'https://usd8.app'; // Replace with your actual deployed URL
+
 export function HomeScreen() {
   const { colors, effectiveTheme } = useTheme();
   const [data, setData] = useState<TokenData | null>(null);
@@ -44,8 +47,7 @@ export function HomeScreen() {
 
   const openCoinbaseWallet = () => {
     // Deep link to Coinbase Wallet browser with the dapp URL
-    const dappUrl = 'https://usd8.app'; // Replace with your actual deployed URL
-    Linking.openURL(`https://go.cb-w.com/dapp?cb_url=${encodeURIComponent(dappUrl)}`);
+    Linking.openURL(`https://go.cb-w.com/dapp?cb_url=${encodeURIComponent(DAPP_URL)}`);
   };
 
   const styles = createStyles(colors);
