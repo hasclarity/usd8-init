@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root {
+  --color-background: 255 255 255;
+  --color-foreground: 0 0 0;
+  --color-card: 255 255 255;
+  --color-card-foreground: 0 0 0;
+  --color-primary: 99 102 241;
+  --color-primary-foreground: 255 255 255;
+  --color-secondary: 244 244 245;
+  --color-secondary-foreground: 0 0 0;
+  --color-muted: 244 244 245;
+  --color-muted-foreground: 113 113 122;
+  --color-accent: 244 244 245;
+  --color-accent-foreground: 0 0 0;
+  --color-border: 228 228 231;
+  --color-input: 228 228 231;
+  --color-ring: 99 102 241;
+}
+
+.dark {
+  --color-background: 0 0 0;
+  --color-foreground: 255 255 255;
+  --color-card: 24 24 27;
+  --color-card-foreground: 255 255 255;
+  --color-primary: 99 102 241;
+  --color-primary-foreground: 255 255 255;
+  --color-secondary: 39 39 42;
+  --color-secondary-foreground: 255 255 255;
+  --color-muted: 39 39 42;
+  --color-muted-foreground: 161 161 170;
+  --color-accent: 39 39 42;
+  --color-accent-foreground: 255 255 255;
+  --color-border: 39 39 42;
+  --color-input: 39 39 42;
+  --color-ring: 99 102 241;
+}
+
+@theme {
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --color-card: var(--color-card);
+  --color-card-foreground: var(--color-card-foreground);
+  --color-primary: var(--color-primary);
+  --color-primary-foreground: var(--color-primary-foreground);
+  --color-secondary: var(--color-secondary);
+  --color-secondary-foreground: var(--color-secondary-foreground);
+  --color-muted: var(--color-muted);
+  --color-muted-foreground: var(--color-muted-foreground);
+  --color-accent: var(--color-accent);
+  --color-accent-foreground: var(--color-accent-foreground);
+  --color-border: var(--color-border);
+  --color-input: var(--color-input);
+  --color-ring: var(--color-ring);
+  
+  --font-sans: system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
+  font-family: var(--font-sans);
+}
